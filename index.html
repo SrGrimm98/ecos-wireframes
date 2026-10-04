@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ECOS: mapa del producto</title>
+<meta name="description" content="Wireframes de ECOS, la plataforma para artistas independientes. Datos de ejemplo.">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+[data-tema="claro"]{--bg:#EFEEEA;--surface:#FFFFFF;--surface-2:#F6F5F2;--ph:#E2E1DC;--rule:#D4D3CD;--border:#B9B8B2;--border-strong:#9E9D97;--muted:#55544F;--text-2:#3A3935;--ink:#1E1E1C;--ink-hover:#000000;color-scheme:light}
+[data-tema="oscuro"]{--bg:#121211;--surface:#1C1C1A;--surface-2:#171716;--ph:#2A2A27;--rule:#34342F;--border:#4A4A45;--border-strong:#6A6A64;--muted:#AFAEA7;--text-2:#CFCEC8;--ink:#EDEDE9;--ink-hover:#FFFFFF;color-scheme:dark}
+body{margin:0}
+body:has([data-tema="oscuro"]){background:#121211}
+body:has([data-tema="claro"]){background:#EFEEEA}
+a{color:var(--ink)}a:hover{color:var(--ink-hover)}
+.wf-card{background:var(--surface);border:1.5px solid var(--border);border-radius:10px;padding:20px;box-sizing:border-box;display:flex;flex-direction:column;gap:12px;text-decoration:none;color:var(--ink)}
+a.wf-card:hover{border-color:var(--ink)}
+.wf-label{font:600 12px/1.3 'IBM Plex Mono',monospace;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.wf-h1{margin:0;font:700 34px/1.15 'IBM Plex Sans',sans-serif}
+.wf-h2{margin:0;font:600 20px/1.3 'IBM Plex Sans',sans-serif}
+.wf-p{margin:0;font-size:15px;line-height:1.5;color:var(--text-2)}
+.wf-chip{display:inline-flex;align-items:center;min-height:32px;padding:0 12px;border:1.5px solid var(--border-strong);border-radius:999px;font-size:13px;background:var(--surface);color:var(--ink);text-decoration:none}
+a.wf-chip:hover{border-color:var(--ink)}
+.wf-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.wf-arrow{font:600 14px 'IBM Plex Mono',monospace;color:var(--muted)}
+</style>
+</head>
+<body>
+<div data-tema="oscuro" style="box-sizing: border-box; padding: 48px 24px; background: var(--bg); color: var(--ink); font-family: 'IBM Plex Sans', system-ui, sans-serif">
+<div style="flex-basis: 100%; display: flex; justify-content: flex-end"><button class="wf-btn wf-btn2" type="button" data-toggle-tema aria-label="Cambiar entre modo claro y oscuro" style="min-height: 36px"><span data-tema-label>Modo claro</span></button></div>
+<div style="max-width: 1240px; margin: 0 auto; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<div class="wf-label">ECOS · Wireframes · baja fidelidad</div>
+<h1 class="wf-h1">Mapa del producto</h1>
+<p class="wf-p" style="font-size: 18px; max-width: 760px">No vendemos cursos. Construimos infraestructura para artistas.</p>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px">
+<a class="wf-card" href="academia.html">
+<div class="wf-label">Pilar 1</div>
+<h2 class="wf-h2">Academia</h2>
+<p class="wf-p"><b>Aprender.</b> Los cursos son el conocimiento.</p>
+</a>
+<a class="wf-card" href="home.html">
+<div class="wf-label">Pilar 2</div>
+<h2 class="wf-h2">Lab</h2>
+<p class="wf-p"><b>Hacer.</b> El Lab es la práctica.</p>
+</a>
+<a class="wf-card" href="comunidad.html">
+<div class="wf-label">Pilar 3</div>
+<h2 class="wf-h2">Comunidad</h2>
+<p class="wf-p"><b>Conectar.</b> La comunidad es la red.</p>
+</a>
+</div>
+
+<div class="wf-card" style="border-width: 2px; border-color: var(--ink)">
+<div class="wf-label">El centro</div>
+<h2 class="wf-h2">Artist OS: la organización</h2>
+<p class="wf-p">El artista activa solo los módulos que necesita.</p>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px">
+<a class="wf-chip" href="identidad.html" style="min-height: 48px; justify-content: center; border-radius: 8px">Identidad</a>
+<a class="wf-chip" href="proyectos.html" style="min-height: 48px; justify-content: center; border-radius: 8px">Proyectos</a>
+<a class="wf-chip" href="musica.html" style="min-height: 48px; justify-content: center; border-radius: 8px">Música</a>
+<a class="wf-chip" href="contenido.html" style="min-height: 48px; justify-content: center; border-radius: 8px">Contenido</a>
+<a class="wf-chip" href="booking.html" style="min-height: 48px; justify-content: center; border-radius: 8px">Booking</a>
+<a class="wf-chip" href="network.html" style="min-height: 48px; justify-content: center; border-radius: 8px">Equipo</a>
+<a class="wf-chip" href="eventos.html" style="min-height: 48px; justify-content: center; border-radius: 8px">Eventos</a>
+<a class="wf-chip" href="dinero.html" style="min-height: 48px; justify-content: center; border-radius: 8px">Dinero</a>
+<a class="wf-chip" href="merch.html" style="min-height: 48px; justify-content: center; border-radius: 8px">Merch</a>
+<a class="wf-chip" href="network.html" style="min-height: 48px; justify-content: center; border-radius: 8px">Network</a>
+</div>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px">
+<a class="wf-card" href="analytics.html">
+<div class="wf-label">Resultado</div>
+<h2 class="wf-h2">Mi carrera</h2>
+<p class="wf-p">Lo que el artista hizo, ganó y construyó, en un solo lugar.</p>
+</a>
+<div class="wf-card">
+<div class="wf-label">Economía</div>
+<h2 class="wf-h2">Marketplace</h2>
+<p class="wf-p">Donde se venden cursos, entradas, merch y servicios.</p>
+</div>
+<a class="wf-card" href="espacio-publico.html">
+<div class="wf-label">Resultado</div>
+<h2 class="wf-h2">Oportunidades</h2>
+<p class="wf-p">Fechas, colaboraciones y contactos que llegan gracias a todo lo anterior.</p>
+</a>
+</div>
+
+<div class="wf-card">
+<div class="wf-label">La lógica del recorrido</div>
+<div class="wf-row">
+<span class="wf-chip">Identidad</span><span class="wf-arrow" aria-hidden="true">→</span>
+<span class="wf-chip">Proyectos</span><span class="wf-arrow" aria-hidden="true">→</span>
+<span class="wf-chip">Música</span><span class="wf-arrow" aria-hidden="true">→</span>
+<span class="wf-chip">Contenido</span><span class="wf-arrow" aria-hidden="true">→</span>
+<span class="wf-chip">Equipo</span><span class="wf-arrow" aria-hidden="true">→</span>
+<span class="wf-chip">Booking</span><span class="wf-arrow" aria-hidden="true">→</span>
+<span class="wf-chip">Eventos</span><span class="wf-arrow" aria-hidden="true">→</span>
+<span class="wf-chip">Dinero</span><span class="wf-arrow" aria-hidden="true">→</span>
+<span class="wf-chip" style="background: var(--ink); color: var(--surface); border-color: var(--ink)">Crecimiento</span>
+</div>
+</div>
+
+<div class="wf-card">
+<div class="wf-label">Pantallas de este wireframe</div>
+<div class="wf-row">
+<a class="wf-chip" href="onboarding.html">Onboarding</a>
+<a class="wf-chip" href="espacio-publico.html">Espacio público</a>
+<a class="wf-chip" href="home.html">Inicio</a>
+<a class="wf-chip" href="identidad.html">Identidad</a>
+<a class="wf-chip" href="proyectos.html">Proyectos</a>
+<a class="wf-chip" href="musica.html">Música</a>
+<a class="wf-chip" href="contenido.html">Contenido</a>
+<a class="wf-chip" href="booking.html">Booking</a>
+<a class="wf-chip" href="eventos.html">Eventos</a>
+<a class="wf-chip" href="merch.html">Merch</a>
+<a class="wf-chip" href="dinero.html">Dinero</a>
+<a class="wf-chip" href="network.html">Network y equipo</a>
+<a class="wf-chip" href="academia.html">Academia</a>
+<a class="wf-chip" href="comunidad.html">Comunidad</a>
+<a class="wf-chip" href="analytics.html">Analytics</a>
+</div>
+</div>
+
+<div class="wf-card">
+<div class="wf-label">Lado del fan · ejemplo con Semiffusa</div>
+<p class="wf-p">Lo que ve alguien que sigue a un artista: sus novedades, el perfil del artista y la compra de una entrada.</p>
+<div class="wf-row">
+<a class="wf-chip" href="fan-inicio.html">Inicio del fan</a>
+<a class="wf-chip" href="fan-perfil.html">Perfil del artista</a>
+<a class="wf-chip" href="fan-entrada.html">Entrada a un evento</a>
+</div>
+</div>
+</div>
+</div>
+<script>
+(function () {
+  var root = document.querySelector('[data-tema]');
+  var q = new URLSearchParams(location.search);
+  var t = q.get('tema');
+  try { if (!t) t = localStorage.getItem('ecos-wf-tema'); } catch (e) {}
+  if (t !== 'claro' && t !== 'oscuro') t = 'oscuro';
+  function apply() {
+    root.setAttribute('data-tema', t);
+    document.querySelectorAll('[data-tema-label]').forEach(function (el) { el.textContent = t === 'oscuro' ? 'Modo claro' : 'Modo oscuro'; });
+  }
+  apply();
+  document.querySelectorAll('[data-toggle-tema]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      t = t === 'oscuro' ? 'claro' : 'oscuro';
+      try { localStorage.setItem('ecos-wf-tema', t); } catch (e) {}
+      apply();
+    });
+  });
+  var defs = { artista: 'Semiffusa', genero: 'DJ · Techno y house', ciudad: 'Resistencia, Chaco', acento: '#E5262C' };
+  var v = {};
+  Object.keys(defs).forEach(function (k) { v[k] = (q.get(k) || defs[k]).slice(0, 60); });
+  if (!/^#?[0-9a-fA-F]{6}$/.test(v.acento)) v.acento = defs.acento;
+  if (v.acento.charAt(0) !== '#') v.acento = '#' + v.acento;
+  v.inicial = v.artista.slice(0, 1);
+  root.style.setProperty('--acento', v.acento);
+  document.querySelectorAll('[data-bind]').forEach(function (el) { el.textContent = v[el.getAttribute('data-bind')]; });
+  document.querySelectorAll('[data-input]').forEach(function (el) { el.value = v[el.getAttribute('data-input')]; });
+  var keep = ['artista', 'genero', 'ciudad', 'acento'].filter(function (k) { return q.get(k); });
+  if (keep.length) {
+    document.querySelectorAll('a[href$=".html"]').forEach(function (a) {
+      var u = new URL(a.getAttribute('href'), location.href);
+      keep.forEach(function (k) { u.searchParams.set(k, q.get(k)); });
+      a.setAttribute('href', u.pathname.split('/').pop() + u.search);
+    });
+  }
+})();
+</script>
+</body>
+</html>

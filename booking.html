@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ECOS: booking</title>
+<meta name="description" content="Wireframes de ECOS, la plataforma para artistas independientes. Datos de ejemplo.">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+[data-tema="claro"]{--bg:#EFEEEA;--surface:#FFFFFF;--surface-2:#F6F5F2;--ph:#E2E1DC;--rule:#D4D3CD;--border:#B9B8B2;--border-strong:#9E9D97;--muted:#55544F;--text-2:#3A3935;--ink:#1E1E1C;--ink-hover:#000000;color-scheme:light}
+[data-tema="oscuro"]{--bg:#121211;--surface:#1C1C1A;--surface-2:#171716;--ph:#2A2A27;--rule:#34342F;--border:#4A4A45;--border-strong:#6A6A64;--muted:#AFAEA7;--text-2:#CFCEC8;--ink:#EDEDE9;--ink-hover:#FFFFFF;color-scheme:dark}
+body{margin:0}
+body:has([data-tema="oscuro"]){background:#121211}
+body:has([data-tema="claro"]){background:#EFEEEA}
+a{color:var(--ink)}a:hover{color:var(--ink-hover)}
+.wf-card{background:var(--surface);border:1.5px solid var(--border);border-radius:10px;padding:20px;box-sizing:border-box;display:flex;flex-direction:column;gap:12px;min-width:0}
+.wf-dark{background:var(--ink);border-color:var(--ink);color:var(--surface)}
+.wf-dark .wf-label{color:var(--rule)}
+.wf-ph{background:var(--ph);border:1.5px dashed var(--border-strong);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--muted);font:500 13px/1.3 'IBM Plex Mono',monospace;text-align:center;padding:8px;box-sizing:border-box}
+.wf-label{font:600 12px/1.3 'IBM Plex Mono',monospace;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.wf-h1{margin:0;font:700 30px/1.15 'IBM Plex Sans',sans-serif}
+.wf-h2{margin:0;font:600 18px/1.3 'IBM Plex Sans',sans-serif}
+.wf-p{margin:0;font-size:15px;line-height:1.5;color:var(--text-2)}
+.wf-dark .wf-p{color:var(--ph)}
+.wf-chip{display:inline-flex;align-items:center;min-height:32px;padding:0 12px;border:1.5px solid var(--border-strong);border-radius:999px;font-size:13px;background:var(--surface);color:var(--ink);white-space:nowrap;text-decoration:none}
+.wf-chip.on{background:var(--ink);border-color:var(--ink);color:var(--surface)}
+.wf-btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 18px;border-radius:8px;border:1.5px solid var(--ink);background:var(--ink);color:var(--surface);font:600 14px 'IBM Plex Sans',sans-serif;cursor:pointer;text-decoration:none}
+.wf-btn2{background:var(--surface);color:var(--ink)}
+.wf-dark .wf-btn{background:var(--surface);color:var(--ink);border-color:var(--surface)}
+.wf-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.wf-grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.wf-scroll{overflow-x:auto}
+.wf-bar{height:8px;background:var(--ph);border-radius:999px;overflow:hidden}
+.wf-bar span{display:block;height:100%;background:var(--ink)}
+.wf-list{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px;font-size:14px}
+.wf-check{display:flex;align-items:center;gap:10px;min-height:32px;font-size:14px}
+.wf-check input{width:18px;height:18px;margin:0;accent-color:var(--ink)}
+.wf-field{display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:500;color:var(--text-2)}
+.wf-field input,.wf-field textarea,.wf-field select{font:14px 'IBM Plex Sans',sans-serif;min-height:40px;padding:8px 10px;border:1.5px solid var(--border);border-radius:8px;background:var(--surface);color:var(--ink);box-sizing:border-box;width:100%}
+.wf-form{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.wf-arrow{font:600 14px 'IBM Plex Mono',monospace;color:var(--muted)}
+.wf-kpi{font:700 24px/1.1 'IBM Plex Sans',sans-serif}
+.wf-delta{font:500 12px 'IBM Plex Mono',monospace;color:var(--muted)}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{border-bottom:1.5px solid var(--rule);padding:10px 8px;text-align:left;white-space:nowrap}
+th{font:600 12px 'IBM Plex Mono',monospace;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+.wf-nav a{display:flex;align-items:center;min-height:40px;padding:0 12px;border-radius:8px;text-decoration:none;font-size:14px;color:var(--text-2)}
+.wf-nav a:hover{background:var(--bg);color:var(--ink)}
+.wf-nav a.on{background:var(--ink);color:var(--surface);font-weight:600}
+.wf-top a{text-decoration:none;font-size:14px;color:var(--text-2);display:inline-flex;align-items:center;min-height:40px;padding:0 10px;border-radius:8px}
+.wf-top a.on{color:var(--ink);font-weight:600;background:var(--ph)}
+</style>
+</head>
+<body>
+<div data-tema="oscuro" style="box-sizing: border-box; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start; background: var(--bg); color: var(--ink); font-family: 'IBM Plex Sans', system-ui, sans-serif">
+<div style="flex-basis: 100%; display: flex; justify-content: flex-end; gap: 10px; align-items: center"><span class="wf-chip">Datos de ejemplo</span><button class="wf-btn wf-btn2" type="button" data-toggle-tema aria-label="Cambiar entre modo claro y oscuro" style="min-height: 36px"><span data-tema-label>Modo claro</span></button></div>
+<nav class="wf-nav" aria-label="Módulos de Artist OS" style="flex: 1 1 220px; max-width: 280px; display: flex; flex-direction: column; gap: 2px; background: var(--surface); border: 1.5px solid var(--border); border-radius: 10px; padding: 14px; box-sizing: border-box">
+<a href="index.html" style="gap: 10px; min-height: 52px; margin-bottom: 6px"><span class="wf-ph" style="width: 32px; height: 32px; padding: 0; border-radius: 50%">E</span><span style="display: flex; flex-direction: column"><b style="color: var(--ink)">ECOS</b><span style="font-size: 12px; color: var(--muted)">Artist OS</span></span></a>
+<a href="home.html">Inicio</a>
+<a href="identidad.html">Identidad</a>
+<a href="proyectos.html">Proyectos</a>
+<a href="musica.html">Música</a>
+<a href="contenido.html">Contenido</a>
+<a href="booking.html" class="on" aria-current="page">Booking</a>
+<a href="eventos.html">Eventos</a>
+<a href="merch.html">Merch</a>
+<a href="dinero.html">Dinero</a>
+<a href="network.html">Network y equipo</a>
+<a href="academia.html">Academia</a>
+<a href="comunidad.html">Comunidad</a>
+<a href="analytics.html">Analytics</a>
+<div class="wf-row" style="margin-top: 12px; border-top: 1.5px solid var(--rule); padding-top: 12px"><span class="wf-ph" style="width: 32px; height: 32px; padding: 0; border-radius: 50%">S</span><span style="display: flex; flex-direction: column; font-size: 13px"><b>Semiffusa</b><span style="color: var(--muted)">Plan artista</span></span></div>
+</nav>
+<main style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
+<div class="wf-row" style="justify-content: space-between">
+<div style="display: flex; flex-direction: column; gap: 6px"><div class="wf-label">Artist OS · Booking</div><h1 class="wf-h1">Pipeline de fechas</h1></div>
+<div class="wf-row"><button class="wf-btn" type="button">+ Nuevo contacto</button></div>
+</div>
+<div class="wf-grid">
+<section class="wf-card"><div class="wf-label">Pipeline · este trimestre</div><h2 class="wf-h2">Booking es un proceso comercial</h2><div style="display: flex; flex-direction: column; gap: 8px"><div class="wf-row" style="gap: 12px"><span style="width: 140px; font-size: 14px"><b>100</b> contactos</span><div style="flex: 1 1 200px; height: 20px; background: var(--ph); border-radius: 4px"><div style="height: 100%; width: 100%; background: var(--ink); border-radius: 4px"></div></div></div><div class="wf-row" style="gap: 12px"><span style="width: 140px; font-size: 14px"><b>30</b> propuestas</span><div style="flex: 1 1 200px; height: 20px; background: var(--ph); border-radius: 4px"><div style="height: 100%; width: 30%; background: var(--ink); border-radius: 4px"></div></div></div><div class="wf-row" style="gap: 12px"><span style="width: 140px; font-size: 14px"><b>12</b> conversaciones</span><div style="flex: 1 1 200px; height: 20px; background: var(--ph); border-radius: 4px"><div style="height: 100%; width: 12%; background: var(--ink); border-radius: 4px"></div></div></div><div class="wf-row" style="gap: 12px"><span style="width: 140px; font-size: 14px"><b>5</b> negociaciones</span><div style="flex: 1 1 200px; height: 20px; background: var(--ph); border-radius: 4px"><div style="height: 100%; width: 5%; background: var(--ink); border-radius: 4px"></div></div></div><div class="wf-row" style="gap: 12px"><span style="width: 140px; font-size: 14px"><b>3</b> fechas</span><div style="flex: 1 1 200px; height: 20px; background: var(--ph); border-radius: 4px"><div style="height: 100%; width: 3%; background: var(--ink); border-radius: 4px"></div></div></div></div><p class="wf-p" style="font-size: 13px">Conversión de contacto a fecha: 3%.</p></section>
+<section class="wf-card"><div class="wf-label">Fechas por mes</div><div role="img" aria-label="Fechas tocadas por mes, de mayo a octubre" style="display: flex; gap: 10px; align-items: flex-end; height: 204px"><div style="flex: 1 1 0; display: flex; flex-direction: column; align-items: center; gap: 6px; min-width: 0"><span style="font: 500 11px 'IBM Plex Mono', monospace; color: var(--muted)">2</span><div style="width: 100%; max-width: 56px; height: 80px; background: var(--border-strong); border-radius: 4px 4px 0 0"></div><span style="font-size: 12px; color: var(--text-2)">May</span></div><div style="flex: 1 1 0; display: flex; flex-direction: column; align-items: center; gap: 6px; min-width: 0"><span style="font: 500 11px 'IBM Plex Mono', monospace; color: var(--muted)">1</span><div style="width: 100%; max-width: 56px; height: 40px; background: var(--border-strong); border-radius: 4px 4px 0 0"></div><span style="font-size: 12px; color: var(--text-2)">Jun</span></div><div style="flex: 1 1 0; display: flex; flex-direction: column; align-items: center; gap: 6px; min-width: 0"><span style="font: 500 11px 'IBM Plex Mono', monospace; color: var(--muted)">3</span><div style="width: 100%; max-width: 56px; height: 120px; background: var(--border-strong); border-radius: 4px 4px 0 0"></div><span style="font-size: 12px; color: var(--text-2)">Jul</span></div><div style="flex: 1 1 0; display: flex; flex-direction: column; align-items: center; gap: 6px; min-width: 0"><span style="font: 500 11px 'IBM Plex Mono', monospace; color: var(--muted)">3</span><div style="width: 100%; max-width: 56px; height: 120px; background: var(--border-strong); border-radius: 4px 4px 0 0"></div><span style="font-size: 12px; color: var(--text-2)">Ago</span></div><div style="flex: 1 1 0; display: flex; flex-direction: column; align-items: center; gap: 6px; min-width: 0"><span style="font: 500 11px 'IBM Plex Mono', monospace; color: var(--muted)">3</span><div style="width: 100%; max-width: 56px; height: 120px; background: var(--border-strong); border-radius: 4px 4px 0 0"></div><span style="font-size: 12px; color: var(--text-2)">Sep</span></div><div style="flex: 1 1 0; display: flex; flex-direction: column; align-items: center; gap: 6px; min-width: 0"><span style="font: 500 11px 'IBM Plex Mono', monospace; color: var(--muted)">4</span><div style="width: 100%; max-width: 56px; height: 160px; background: var(--ink); border-radius: 4px 4px 0 0"></div><span style="font-size: 12px; color: var(--text-2)">Oct</span></div></div></section>
+</div>
+<section class="wf-card"><div class="wf-label">Estados</div><div class="wf-scroll"><div style="display: grid; gap: 12px; grid-template-columns: repeat(7, minmax(170px, 1fr))"><div style="display: flex; flex-direction: column; gap: 8px; background: var(--surface-2); border: 1.5px solid var(--rule); border-radius: 8px; padding: 12px"><div class="wf-label">Prospecto</div><div style="background: var(--surface); border: 1.5px solid var(--border); border-radius: 6px; padding: 10px; font-size: 13px; line-height: 1.4"><b>Club Delta</b><br>Rosario · Fee —</div><div style="background: var(--surface); border: 1.5px solid var(--border); border-radius: 6px; padding: 10px; font-size: 13px; line-height: 1.4"><b>Festival Norte</b><br>Salta · Fee —</div></div><div style="display: flex; flex-direction: column; gap: 8px; background: var(--surface-2); border: 1.5px solid var(--rule); border-radius: 8px; padding: 12px"><div class="wf-label">Contactado</div><div style="background: var(--surface); border: 1.5px solid var(--border); border-radius: 6px; padding: 10px; font-size: 13px; line-height: 1.4"><b>Sala Patio</b><br>Córdoba · Fee a definir<br>Seguimiento: 14 oct</div><div style="background: var(--surface); border: 1.5px solid var(--border); border-radius: 6px; padding: 10px; font-size: 13px; line-height: 1.4"><b>Bar Puerto</b><br>Posadas</div></div><div style="display: flex; flex-direction: column; gap: 8px; background: var(--surface-2); border: 1.5px solid var(--rule); border-radius: 8px; padding: 12px"><div class="wf-label">Interesado</div><div style="background: var(--surface); border: 1.5px solid var(--border); border-radius: 6px; padding: 10px; font-size: 13px; line-height: 1.4"><b>Club Río</b><br>Corrientes · $180.000</div></div><div style="display: flex; flex-direction: column; gap: 8px; background: var(--surface-2); border: 1.5px solid var(--rule); border-radius: 8px; padding: 12px"><div class="wf-label">Negociando</div><div style="background: var(--surface); border: 1.5px solid var(--border); border-radius: 6px; padding: 10px; font-size: 13px; line-height: 1.4"><b>Festival Litoral</b><br>Santa Fe · $350.000</div></div><div style="display: flex; flex-direction: column; gap: 8px; background: var(--surface-2); border: 1.5px solid var(--rule); border-radius: 8px; padding: 12px"><div class="wf-label">Confirmado</div><div style="background: var(--surface); border: 1.5px solid var(--border); border-radius: 6px; padding: 10px; font-size: 13px; line-height: 1.4"><b>Sala Norte</b><br>Resistencia · 11 oct · $220.000</div></div><div style="display: flex; flex-direction: column; gap: 8px; background: var(--surface-2); border: 1.5px solid var(--rule); border-radius: 8px; padding: 12px"><div class="wf-label">Realizado</div><div style="background: var(--surface); border: 1.5px solid var(--border); border-radius: 6px; padding: 10px; font-size: 13px; line-height: 1.4"><b>Orden Ciclo #03</b><br>Resistencia · $260.000</div></div><div style="display: flex; flex-direction: column; gap: 8px; background: var(--surface-2); border: 1.5px solid var(--rule); border-radius: 8px; padding: 12px"><div class="wf-label">Cerrado o perdido</div><div style="background: var(--surface); border: 1.5px solid var(--border); border-radius: 6px; padding: 10px; font-size: 13px; line-height: 1.4"><b>Club Sur</b><br>Sin fecha disponible</div></div></div></div></section>
+<section class="wf-card"><div class="wf-label">Calendario de fechas</div><div class="wf-scroll"><table><thead><tr><th>Show</th><th>Venue</th><th>Ciudad</th><th>Horario</th><th class="num">Fee</th><th>Rider</th><th>Transporte</th><th>Hotel</th><th>Pago</th></tr></thead><tbody><tr><td>Sáb 11 oct</td><td>Sala Norte</td><td>Resistencia</td><td>02:00</td><td class="num">$220.000</td><td>✓</td><td>—</td><td>—</td><td><span class="wf-chip">50% adelantado</span></td></tr><tr><td>Vie 24 oct</td><td>Club Río</td><td>Corrientes</td><td>01:30</td><td class="num">$180.000</td><td>✓</td><td>Auto propio</td><td>—</td><td><span class="wf-chip">Pendiente</span></td></tr><tr><td>Sáb 8 nov</td><td>Orden Ciclo #05</td><td>Resistencia</td><td>00:00</td><td class="num">Producción propia</td><td>✓</td><td>—</td><td>—</td><td><span class="wf-chip on">Propio</span></td></tr></tbody></table></div></section>
+</main>
+</div>
+<script>
+(function () {
+  var root = document.querySelector('[data-tema]');
+  var q = new URLSearchParams(location.search);
+  var t = q.get('tema');
+  try { if (!t) t = localStorage.getItem('ecos-wf-tema'); } catch (e) {}
+  if (t !== 'claro' && t !== 'oscuro') t = 'oscuro';
+  function apply() {
+    root.setAttribute('data-tema', t);
+    document.querySelectorAll('[data-tema-label]').forEach(function (el) { el.textContent = t === 'oscuro' ? 'Modo claro' : 'Modo oscuro'; });
+  }
+  apply();
+  document.querySelectorAll('[data-toggle-tema]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      t = t === 'oscuro' ? 'claro' : 'oscuro';
+      try { localStorage.setItem('ecos-wf-tema', t); } catch (e) {}
+      apply();
+    });
+  });
+  var defs = { artista: 'Semiffusa', genero: 'DJ · Techno y house', ciudad: 'Resistencia, Chaco', acento: '#E5262C' };
+  var v = {};
+  Object.keys(defs).forEach(function (k) { v[k] = (q.get(k) || defs[k]).slice(0, 60); });
+  if (!/^#?[0-9a-fA-F]{6}$/.test(v.acento)) v.acento = defs.acento;
+  if (v.acento.charAt(0) !== '#') v.acento = '#' + v.acento;
+  v.inicial = v.artista.slice(0, 1);
+  root.style.setProperty('--acento', v.acento);
+  document.querySelectorAll('[data-bind]').forEach(function (el) { el.textContent = v[el.getAttribute('data-bind')]; });
+  document.querySelectorAll('[data-input]').forEach(function (el) { el.value = v[el.getAttribute('data-input')]; });
+  var keep = ['artista', 'genero', 'ciudad', 'acento'].filter(function (k) { return q.get(k); });
+  if (keep.length) {
+    document.querySelectorAll('a[href$=".html"]').forEach(function (a) {
+      var u = new URL(a.getAttribute('href'), location.href);
+      keep.forEach(function (k) { u.searchParams.set(k, q.get(k)); });
+      a.setAttribute('href', u.pathname.split('/').pop() + u.search);
+    });
+  }
+})();
+</script>
+</body>
+</html>
